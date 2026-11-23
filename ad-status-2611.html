@@ -1,0 +1,498 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>메리튠 광고 현황</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap">
+<style>
+/* Order of preference in every section: diagram > chart > table > text (Don, 2026-11-23) */
+:root{
+  --bg:#ffffff; --surface:#f4f7f8; --line:#e2e7ea;
+  --ink:#1d2a31; --ink2:#4c5a62; --muted:#7a868d;
+  --accent:#2f6b8a; --accent-mid:#6f9bb3; --accent-soft:#a9c4d2; --accent-faint:#dce8ee; --plan:#cdd3d7;
+  --f-body:"Noto Sans KR","Noto Sans JP","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  color-scheme:light;
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.65;word-break:keep-all;overflow-wrap:break-word;line-break:strict}
+.wrap{max-width:780px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:2px solid var(--ink);padding-bottom:12px}
+h1{font-size:24px;margin:0;font-weight:700;letter-spacing:-.01em}
+.date{color:var(--ink2);font-size:14px;font-variant-numeric:tabular-nums}
+section{padding-block:28px;border-bottom:1px solid var(--line);display:grid;gap:14px}
+h2{font-size:18px;margin:0;font-weight:700;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+h2 .n{color:var(--accent);font-variant-numeric:tabular-nums}
+h3{font-size:14px;margin:6px 0 0;font-weight:500;color:var(--ink2)}
+p{margin:0;text-wrap:pretty}
+ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+li{text-wrap:pretty}
+b{font-weight:700}
+.jp{font-family:"Noto Sans JP",var(--f-body)}
+.ko{color:var(--muted);font-size:13px;font-weight:400}
+.num{font-variant-numeric:tabular-nums}
+
+/* 1. funnel diagram */
+.funnel{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) minmax(0,.9fr);gap:6px 12px;align-items:stretch}
+.band{display:grid;place-items:center;text-align:center;color:#fff;padding:14px 18%;min-height:76px}
+.band b{display:block;font-size:16px}
+.band span{font-size:12.5px;opacity:.92}
+.b1{background:var(--accent-soft);color:var(--ink);clip-path:polygon(0 0,100% 0,92% 100%,8% 100%)}
+.b2{background:var(--accent-mid);clip-path:polygon(8% 0,92% 0,84% 100%,16% 100%)}
+.b3{background:var(--accent);clip-path:polygon(16% 0,84% 0,76% 100%,24% 100%)}
+.ads{display:grid;align-content:center;gap:2px;font-size:13.5px;border-left:3px solid var(--line);padding-left:10px;min-width:0}
+.ads small{font-size:12.5px;color:var(--ink2)}
+.bud{display:grid;align-content:center;justify-items:start;gap:2px;background:var(--surface);border-radius:8px;padding:10px 12px;font-size:13px;color:var(--ink2);min-width:0}
+.bud strong{font-size:16px;color:var(--accent);font-variant-numeric:tabular-nums}
+.bud.span2{grid-row:span 2}
+.why{list-style:none;padding:0;display:grid;gap:4px}
+.why li{padding-left:14px;position:relative}
+.why li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.chg{display:flex;flex-wrap:wrap;gap:8px}
+.chg div{flex:1 1 240px;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13.5px;min-width:0}
+.chg b{color:var(--accent);margin-right:6px}
+
+/* 2. product status */
+.status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.status div{border-radius:8px;padding:12px;display:grid;gap:4px;font-size:13.5px}
+.status .on{background:var(--accent);color:#fff}
+.status .wait{background:var(--surface);color:var(--ink)}
+.status b{font-size:15px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px}
+.facts div{display:grid}
+.facts strong{font-size:22px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.facts span{font-size:13px;color:var(--ink2)}
+
+/* 3. finding -> judgment -> action flow */
+.flow{display:grid;grid-template-columns:minmax(0,1.35fr) 18px minmax(0,1fr) 18px minmax(0,1fr);gap:8px 6px;align-items:stretch}
+.flow .hd{font-size:12.5px;font-weight:700;color:var(--ink2);letter-spacing:.04em;padding-bottom:2px;border-bottom:2px solid var(--ink)}
+.flow .hd.blank{border:0}
+.cell{border-radius:8px;padding:10px 12px;font-size:13.5px;display:grid;gap:6px;align-content:center;min-width:0}
+.f1{background:var(--surface)}
+.f2{border:1px solid var(--line)}
+.f3{background:var(--accent-faint);font-weight:500}
+.arrow{display:grid;place-items:center;color:var(--accent);font-size:15px}
+.mini{display:flex;align-items:flex-end;gap:6px;height:56px}
+.mini div{flex:1;display:grid;align-content:end;justify-items:center;gap:2px;font-size:11px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.mini i{display:block;width:100%;border-radius:3px 3px 0 0;background:var(--accent-soft)}
+.mini .hi i{background:var(--accent)}
+.hb{display:grid;gap:4px}
+.hb div{display:grid;grid-template-columns:minmax(64px,auto) 1fr;gap:6px;align-items:center;font-size:11.5px;color:var(--ink2)}
+.hb span.t{display:flex;align-items:center;gap:5px;font-variant-numeric:tabular-nums}
+.hb i{display:block;height:9px;border-radius:0 3px 3px 0;background:var(--accent-soft)}
+.hb .hi i{background:var(--accent)}
+.stack{display:flex;height:18px;gap:2px;border-radius:4px;overflow:hidden}
+.stack div{height:100%}
+.slab{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:11.5px;color:var(--ink2)}
+.big{font-size:20px;font-weight:700;color:var(--accent);line-height:1.2}
+
+/* bars (4) */
+.chart{display:grid;gap:8px;background:var(--surface);border-radius:8px;padding:16px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--ink2)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.row{display:grid;grid-template-columns:minmax(96px,30%) 1fr;gap:10px;align-items:center}
+.row .lab{font-size:13px;min-width:0}
+.row .lab small{display:block;font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.track{display:grid;gap:3px;min-width:0}
+.bar{display:flex;align-items:center;gap:8px;min-width:0}
+.bar span.f{height:14px;border-radius:0 4px 4px 0;display:block;flex:none}
+.bar em{font-style:normal;font-size:12px;color:var(--ink2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.stack-lab{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink2)}
+
+/* 5. timeline */
+.tl{list-style:none;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:92px 18px 1fr;gap:10px;max-width:none}
+.tl .d{font-size:13px;font-weight:700;color:var(--ink2);text-align:right;padding-top:6px;font-variant-numeric:tabular-nums}
+.tl .dot{position:relative}
+.tl .dot::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl .dot::after{content:"";position:absolute;left:3px;top:10px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--accent)}
+.tl .main .dot::after{background:var(--accent)}
+.tl .c{padding:4px 0 14px;font-size:14px;display:grid;gap:2px}
+.tl .main .c{background:var(--accent-faint);border-radius:8px;padding:8px 12px;margin-bottom:12px}
+.tl .c small{font-size:12.5px;color:var(--ink2)}
+.side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.side div{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13.5px;display:grid;gap:2px;min-width:0}
+.side b{color:var(--accent)}
+
+/* 6. Vine tiers */
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;align-items:end}
+.tier{border:1px solid var(--line);border-right:0;padding:10px 12px;display:grid;gap:3px;font-size:13px;min-width:0}
+.tier:last-child{border-right:1px solid var(--line)}
+.tier .q{font-size:12.5px;color:var(--ink2)}
+.tier .fee{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+.tier.sel{background:var(--accent);color:#fff;border-color:var(--accent);padding-block:18px}
+.tier.sel .q{color:#fff;opacity:.9}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chips span{background:#fff;color:var(--accent);border-radius:10px;padding:1px 8px;font-size:12px;font-weight:700}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:500px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th{font-weight:500;color:var(--ink2);font-size:13px;background:var(--surface)}
+td.r,th.r{text-align:right}
+
+.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.kv div{border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:grid;gap:6px;align-content:start;font-size:13.5px;min-width:0}
+.kv b{color:var(--accent)}
+.kv span{padding-left:10px;border-left:2px solid var(--accent-faint)}
+/* 7. asks */
+.ask{display:grid;gap:10px;list-style:none;padding:0}
+.ask li{display:grid;grid-template-columns:22px 1fr;gap:8px;max-width:none}
+.ask li::before{content:"";width:14px;height:14px;border:2px solid var(--accent);border-radius:3px;margin-top:4px}
+
+
+.part{margin-top:36px;padding:10px 14px;background:var(--ink);color:#fff;border-radius:8px;font-size:16px;font-weight:700;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.part span{font-size:13px;font-weight:400;opacity:.85}
+.toc{display:flex;gap:8px;flex-wrap:wrap;padding-top:16px}
+.toc a{border:1px solid var(--line);border-radius:16px;padding:4px 12px;font-size:13px;color:var(--accent);text-decoration:none}
+
+@media (max-width:620px){
+  .funnel{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
+  .bud,.bud.span2{grid-column:1 / -1;grid-row:auto}
+  .flow{grid-template-columns:minmax(0,1fr)}
+  .flow .hd,.flow .arrow{display:none}
+  .flow .f1{margin-top:10px}
+  .flow .f2::before{content:"판단 ";font-weight:700;color:var(--ink2)}
+  .flow .f3::before{content:"반영 ";font-weight:700;color:var(--accent)}
+  .status,.side,.kv{grid-template-columns:minmax(0,1fr)}
+  .facts.k4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tl li{grid-template-columns:70px 18px 1fr}
+}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>메리튠 광고 현황 <span class="ko">아마존 · META</span></h1>
+  <span class="date">2026-11-23 기준</span>
+</header>
+<nav class="toc"><a href="#amazon">아마존 광고</a><a href="#meta">META 광고</a></nav>
+<div class="part" id="amazon">아마존 광고 <span>2026-11-23 기준</span></div>
+
+<section>
+  <h2><span class="n">1</span>운영 구조</h2>
+  <div class="funnel" aria-label="구매 단계별 광고 구조">
+    <div class="band b1"><div><b>인지</b><span>메리튠을 모르는 부모</span></div></div>
+    <div class="ads"><span>브랜드 동영상·컬렉션 광고</span><span>육아 시기별 디스플레이 광고</span><small>판단: 신규 고객 도달 · 12/7 평가</small></div>
+    <div class="bud"><span>브랜드 광고</span><strong>¥3,000 / 일</strong><span>디스플레이 광고</span><strong>¥1,500 / 일</strong></div>
+
+    <div class="band b2"><div><b>고려</b><span>상품을 비교 중인 고객</span></div></div>
+    <div class="ads"><span>힙시트 경쟁 상품 타깃</span><span>속싸개 스트랩 상세페이지 함께 노출 (11/21~)</span><small>판단: 클릭 후 구매율</small></div>
+    <div class="bud span2"><span>검색 광고</span><strong>¥3,400 / 일</strong><span>고려·전환 공통</span></div>
+
+    <div class="band b3"><div><b>전환</b><span>구매 직전 검색 고객</span></div></div>
+    <div class="ads"><span>상품군별 자동 광고</span><span>속싸개 키워드·상품 타깃</span><span>브랜드 검색 방어</span><small>판단: 광고비 대비 매출 · 주문 수</small></div>
+  </div>
+  <ul class="why">
+    <li>주문이 확인되는 전환 단계에 예산을 먼저 두고, 인지 단계는 상한을 둡니다.</li>
+    <li>재고가 157개로 적어 이미 팔리는 속싸개에 집중합니다.</li>
+    <li>인지 광고는 판매가 아닌 신규 고객 도달로 보고 12/7에 판단합니다.</li>
+  </ul>
+  <div class="chg">
+    <div><b>11/16</b>주문이 없던 힙시트·아기띠 키워드 광고 2개 중단</div>
+    <div><b>11/21</b>스트랩 상세페이지에 스와들 수트 2종·더블케어 함께 노출 시작 (일 상한 ¥1,000, 11/24 유지 여부 결정)</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">2</span>광고 성과 <span class="ko">10/28~11/22 · 광고 클릭 후 14일 내 구매 기준</span></h2>
+  <div class="facts k4">
+    <div><strong>¥95,078</strong><span>광고비</span></div>
+    <div><strong>¥84,091</strong><span>광고 매출</span></div>
+    <div><strong>16건</strong><span>광고 주문</span></div>
+    <div><strong>0.88배</strong><span>광고비 대비 매출</span></div>
+  </div>
+  <h3>기간별</h3>
+  <div class="chart" id="c-period" aria-label="기간별 광고비와 광고 매출"></div>
+  <h3>광고별 <span class="ko">1번 운영 구조의 단계 기준</span></h3>
+  <div class="chart" id="c-alloc" aria-label="광고별 광고비와 광고 매출"></div>
+  <ul class="why">
+    <li>광고 주문 16건 중 12건이 속싸개이고, 속싸개 검색 광고는 광고비의 2.5배 매출을 냈습니다.</li>
+    <li>11/13부터 광고비의 54%가 인지 광고(브랜드·디스플레이)에 쓰여 이 기간 배율이 0.35배로 내려갔고, 검색 광고만 보면 0.77배입니다.</li>
+    <li>힙시트·아기띠는 클릭 대비 주문이 적어 11/16 키워드 광고를 줄였고, 블프 예산은 속싸개 중심으로 둡니다.</li>
+  </ul>
+  <div class="facts">
+    <div><strong>157개</strong><span>FBA(아마존 물류창고) 재고 · 입고 예정 없음</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">3</span>광고 데이터로 본 구매 흐름</h2>
+  <div class="flow" aria-label="발견에서 반영까지">
+    <div class="hd">발견</div><div class="hd blank"></div><div class="hd">판단</div><div class="hd blank"></div><div class="hd">반영</div>
+
+    <div class="cell f1">
+      <span>검색 광고를 여러 번 본 고객만 구매</span>
+      <div class="mini" aria-label="노출 횟수별 구매율">
+        <div><span>0.00%</span><i style="height:2px"></i>1회</div>
+        <div><span>0.01%</span><i style="height:3px"></i>5~9회</div>
+        <div><span>0.11%</span><i style="height:14px"></i>10~19회</div>
+        <div class="hi"><span>0.30%</span><i style="height:38px"></i>20회+</div>
+      </div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="cell f2">예산을 넓게 나누면 구매까지 이어지지 않음</div>
+    <div class="arrow">→</div>
+    <div class="cell f3">반응 있는 검색어·상품에 예산 집중</div>
+
+    <div class="cell f1">
+      <span>광고 경유 구매 고객</span>
+      <span><span class="big">17명</span> 전원 검색 광고 경유 · 전원 신규</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="cell f2">브랜드·디스플레이 광고는 아직 판매용이 아님</div>
+    <div class="arrow">→</div>
+    <div class="cell f3">인지 단계로 분리, 상한 유지, 12/7 평가</div>
+
+    <div class="cell f1">
+      <span>검색 광고 클릭의 출처</span>
+      <div class="stack" aria-label="클릭 출처 비율">
+        <div style="width:73%;background:var(--accent)"></div><div style="width:24%;background:var(--accent-soft)"></div><div style="width:3%;background:var(--plan)"></div>
+      </div>
+      <div class="slab"><span>일반 검색어 73%</span><span>상품번호 24%</span><span>경쟁 브랜드 3%</span><span>메리튠 3회</span></div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="cell f2">일반 검색 결과의 가격·리뷰 비교에서 이겨야 구매</div>
+    <div class="arrow">→</div>
+    <div class="cell f3">쿠폰·Vine 제안 (6·7번)</div>
+
+    <div class="cell f1">
+      <span>검색어별 구매율</span>
+      <div class="hb" aria-label="검색어별 구매율">
+        <div class="hi"><span class="jp">おくるみ 新生児</span><span class="t"><i style="width:100%"></i>0.11%</span></div>
+        <div><span class="jp">抱っこひも</span><span class="t"><i style="width:27%"></i>0.03%</span></div>
+        <div><span class="jp">ヒップシート</span><span class="t"><i style="width:9%"></i>0.01%</span></div>
+      </div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="cell f2">신생아 속싸개 검색이 가장 효율적</div>
+    <div class="arrow">→</div>
+    <div class="cell f3">블프 예산 속싸개 중심</div>
+  </div>
+  <p>구매율은 9/1~11/15, 클릭 출처는 10/20~11/16 기준입니다. 광고 경유 구매가 17건이라 블프 기간 데이터로 다시 확인하겠습니다.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span>예산 집행 현황</h2>
+  <div class="facts">
+    <div><strong>¥95,078</strong><span>10/28~11/22 집행 (약&nbsp;88만&nbsp;원)</span></div>
+    <div><strong>46%</strong><span>같은 기간 계획 193만&nbsp;원 대비</span></div>
+    <div><strong>¥4,040</strong><span>일평균 실지출 (상한 ¥6,630)</span></div>
+  </div>
+  <div class="chart" id="c-plan" aria-label="10/23 계획 대비 실제 집행"></div>
+  <p>스마일세일 기간 주문이 적어 일 상한을 계획(12만&nbsp;원)보다 낮은 약&nbsp;6.2만&nbsp;원으로 두었고, 주문이 없는 키워드는 줄였습니다.</p>
+  <h3>아마존 광고 예산 500만&nbsp;원 <span class="ko">계약 기간 12/10까지</span></h3>
+  <div class="chart">
+    <div class="stack" id="c-contract" style="height:22px"></div>
+    <div class="stack-lab" id="c-contract-lab"></div>
+  </div>
+  <p>블프에 일 7.5만&nbsp;원 수준이면 총 약&nbsp;200만&nbsp;원을 집행하고 약&nbsp;300만&nbsp;원이 남을 것으로 봅니다.</p>
+  <p>원화는 ¥1=9.3원으로 환산했고 카드 청구 기준으로 확정됩니다.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span>블랙프라이데이·사이버먼데이 <span class="ko">11/27~12/7</span></h2>
+  <ul class="tl">
+    <li><span class="d">11/24</span><span class="dot"></span><span class="c">스트랩 함께 노출 광고 유지 여부 결정</span></li>
+    <li><span class="d">11/25</span><span class="dot"></span><span class="c">Vine 등록 (동의 시, 6번)</span></li>
+    <li class="main"><span class="d">11/27~12/7</span><span class="dot"></span><span class="c"><b>속싸개 · 브랜드 검색 방어 · 힙시트 중심, 일 7.5만&nbsp;원</b><small>재고 157개라 팔리는 상품에 집중 · 판매 흐름이 좋으면 즉시 증액</small></span></li>
+    <li><span class="d">12/7</span><span class="dot"></span><span class="c">브랜드·디스플레이 광고 평가</span></li>
+    <li><span class="d">12/10</span><span class="dot"></span><span class="c">아마존 광고 계약 기간 종료</span></li>
+  </ul>
+  <div class="side">
+    <div><b>남는 예산 재배분 제안</b><span>일부를 블프 기간 메타·인플루언서 광고로 이동. 금액은 메타 운영 계획과 함께 정리</span></div>
+    <div><b>아기띠 브랜드 광고</b><span>상세페이지·A+(상품 소개 영역) 개편 후 시작. 전달받은 더블케어 누끼샷으로 개편 중</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">6</span>Vine 진행안</h2>
+  <p>리뷰 30건 미만 상품을 아마존이 선정한 리뷰어에게 무상 제공하고 리뷰를 받는 아마존 공식 프로그램입니다. 힙시트·더블케어는 리뷰가 각 2건이라 검색 결과 비교에서 밀리고 있습니다.</p>
+  <div class="tiers" aria-label="상품별 등록비 구간">
+    <div class="tier"><span class="q">1~2개 제공</span><span class="fee">무료</span><span>리뷰 최대 2건</span></div>
+    <div class="tier sel"><span class="q">3~10개 제공</span><span class="fee">¥10,000</span><span>리뷰 최대 10건</span><div class="chips"><span>힙시트 10개</span><span>더블케어 5개</span></div></div>
+    <div class="tier"><span class="q">11~30개 제공</span><span class="fee">¥22,000</span><span>리뷰 최대 30건</span></div>
+  </div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>상품</th><th class="r">현재 리뷰</th><th class="r">무상 제공</th><th class="r">제공 후 재고</th><th class="r">등록비</th></tr></thead>
+      <tbody>
+        <tr><td>힙시트</td><td class="r">2건 (★4.5)</td><td class="r">10개 (색상별 6·4)</td><td class="r">25개</td><td class="r">¥10,000</td></tr>
+        <tr><td>더블케어 아기띠</td><td class="r">2건 (★5.0)</td><td class="r">5개 (색상별 3·2)</td><td class="r">6개</td><td class="r">¥10,000</td></tr>
+        <tr><td><b>합계</b></td><td></td><td class="r"><b>15개</b></td><td></td><td class="r"><b>¥20,000 (약&nbsp;19만&nbsp;원)</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="kv">
+    <div><b>수량</b><span>힙시트는 30개를 주면 블프 재고가 남지 않아 같은 구간 상한인 10개</span><span>더블케어는 재고 11개·입고 예정 없음이라 5개</span></div>
+    <div><b>일정</b><span>동의 시 11/25까지 등록</span><span>리뷰는 상품 수령 후 작성되어 12월 중순 이후 판매·아기띠 A+ 개편 후 광고에 효과</span></div>
+    <div><b>비용</b><span>등록 후 90일 안에 첫 리뷰가 없으면 청구되지 않음</span><span>상품 원가 15개분·FBA 수수료 별도, 낮은 평점이어도 환불 없음</span></div>
+  </div>
+</section>
+
+
+<div class="part" id="meta">META 광고 <span>11/22 마감 기준 · 메타 광고관리자 11/23 조회</span></div>
+
+<section>
+  <h2><span class="n">1</span>예산 현황 <span class="ko">10/9 ~ 12/10</span></h2>
+  <div class="facts k4">
+    <div><strong>₩4,000,000</strong><span>총 예산</span></div>
+    <div><strong>₩1,473,855</strong><span>사용 (10/9~11/22)</span></div>
+    <div><strong>₩2,410,000</strong><span>남은 계획 (11/23~12/10)</span></div>
+    <div><strong>₩116,145</strong><span>여유 · 블프에 추가 활용</span></div>
+  </div>
+  <div class="chart">
+    <div class="stack" style="height:22px">
+      <div title="사용 약 147만 원" style="width:36.8%;background:var(--accent)"></div>
+      <div title="남은 계획 241만 원" style="width:60.3%;background:var(--accent-soft)"></div>
+      <div title="여유 약 12만 원" style="width:2.9%;background:var(--plan)"></div>
+    </div>
+    <div class="stack-lab">
+      <span><i style="display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--accent)"></i>사용 약&nbsp;147만&nbsp;원</span>
+      <span><i style="display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--accent-soft)"></i>남은 계획 241만&nbsp;원</span>
+      <span><i style="display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--plan)"></i>여유 약&nbsp;12만&nbsp;원</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">2</span>기간별 사용·성과</h2>
+  <div class="facts k4">
+    <div><strong>12,526회</strong><span>링크 클릭</span></div>
+    <div><strong>23.2만</strong><span>노출</span></div>
+    <div><strong>5.97%</strong><span>트래픽 캠페인 CTR</span></div>
+    <div><strong>₩86</strong><span>트래픽 클릭당 비용</span></div>
+  </div>
+  <h3>기간별 사용 금액</h3>
+  <div class="chart" id="m-period" aria-label="기간별 META 사용 금액"></div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>기간</th><th>캠페인</th><th class="r">사용 금액</th><th class="r">노출</th><th class="r">링크 클릭</th><th class="r">CTR</th></tr></thead>
+      <tbody>
+        <tr><td>온드 10/9~11/3</td><td>참여형</td><td class="r">₩439,578</td><td class="r">64,893</td><td class="r">3,438</td><td class="r">5.30%</td></tr>
+        <tr><td>스마일세일 11/4~11/12</td><td>트래픽</td><td class="r">₩372,361</td><td class="r">79,509</td><td class="r">4,254</td><td class="r">5.50%</td></tr>
+        <tr><td>스마일세일 11/4~11/12</td><td>참여형</td><td class="r">₩184,355</td><td class="r">20,967</td><td class="r">988</td><td class="r">4.62%</td></tr>
+        <tr><td>상시 11/13~11/22</td><td>트래픽</td><td class="r">₩298,129</td><td class="r">50,654</td><td class="r">3,133</td><td class="r">6.70%</td></tr>
+        <tr><td>상시 11/13~11/22</td><td>참여형</td><td class="r">₩179,432</td><td class="r">15,934</td><td class="r">713</td><td class="r">4.37%</td></tr>
+        <tr><td><b>합계</b></td><td></td><td class="r"><b>₩1,473,855</b></td><td class="r"><b>231,957</b></td><td class="r"><b>12,526</b></td><td class="r"><b>5.40%</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="why">
+    <li>트래픽 캠페인(11/4~)은 8.7만 명에게 도달해 아마존 상품 페이지로 7,387회 연결했습니다.</li>
+    <li>상시 기간에 트래픽 캠페인 CTR이 5.50%에서 6.70%로 올라 효율이 더 좋아졌습니다.</li>
+    <li>참여형 캠페인은 인스타그램 계정에 5.4만 명이 도달했고, 게시물 참여 6,300회·저장 96회·댓글 45개가 나왔습니다.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">3</span>현재 운영 상태</h2>
+  <div class="status">
+    <div class="on"><b>트래픽 캠페인</b><span>운영 중 · 하루 ₩30,000</span><span>세트 3개 (브랜디드·바이럴·테스트)</span></div>
+    <div class="on"><b>참여형 캠페인</b><span>운영 중 · 하루 ₩20,000</span><span>인스타그램 계정 운영</span></div>
+    <div class="wait"><b>블프 예산</b><span>예약 완료</span><span>11/27부터 날짜별 자동 적용</span></div>
+  </div>
+  <div class="chg">
+    <div><b>11/5</b>브랜디드·바이럴 세트에 하루 최소 지출을 걸어 고르게 노출</div>
+    <div><b>11/6</b>바이럴 세트를 육아 페이지 계정으로 교체</div>
+    <div><b>11/10</b>바이럴 세트를 단독 세트와 테스트 세트로 분리</div>
+    <div><b>11/12</b>스마일세일 종료 후 상시 예산(하루 ₩30,000)으로 전환</div>
+    <div><b>11/17</b>참여형 캠페인을 새 게시물 세트로 교체</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">4</span>앞으로의 일정·예산 <span class="ko">₩2,410,000</span></h2>
+  <h3>하루 예산 (트래픽 + 참여형)</h3>
+  <div class="chart" id="m-plan" aria-label="기간별 하루 예산"></div>
+  <ul class="tl">
+    <li><span class="d">11/23~11/26</span><span class="dot"></span><span class="c">상시 운영 · 하루 ₩50,000<small>기간 합계 ₩200,000</small></span></li>
+    <li class="main"><span class="d">11/27~12/7</span><span class="dot"></span><span class="c"><b>블랙프라이데이 · 기간 합계 ₩2,150,000</b><small>시작일·마감일 ₩280,000 · 주말 ₩210,000 · 평일 ₩150,000</small></span></li>
+    <li><span class="d">12/8~12/10</span><span class="dot"></span><span class="c">참여형 마무리 · 하루 ₩20,000<small>기간 합계 ₩60,000</small></span></li>
+    <li><span class="d">12/10</span><span class="dot"></span><span class="c">META 광고 계약 기간 종료</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">5</span>블랙프라이데이 운영 방향 <span class="ko">11/27~12/7</span></h2>
+  <ul class="why">
+    <li>시작일(11/27)과 마감일(12/7)에 예산을 가장 크게, 주말은 평일보다 높게 운영합니다.</li>
+    <li>날짜별 예산은 미리 예약해 두어 자동으로 바뀝니다.</li>
+    <li>여유 예산(₩116,145)은 블프 기간 반응을 보고 추가로 투입합니다.</li>
+    <li>참여형 캠페인은 하루 ₩20,000으로 12/10까지 계속 운영합니다.</li>
+    <li>정산 자료(기간별 결과 리포트·인보이스·카드 영수증)는 스마일세일·상시·블프 기간별로 정리해 전달드립니다.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">7</span>행사 전 확인 부탁드립니다 <span class="ko">아마존</span></h2>
+  <ul class="ask">
+    <li><span><b>블프 딜·쿠폰</b> 힙시트와 아기띠는 같은 검색 결과의 주요 제품보다 판매가가 높은 편입니다. 힙시트 20~30%, 아기띠 15~20% 수준의 쿠폰을 적용하면 광고 효율 개선에 도움이 될 것으로 봅니다. 참여하실 상품과 가격을 알려주세요.</span></li>
+    <li><span><b>속싸개 스트랩 입고</b> 가장 잘 팔리는 상품인데 현재 재고가 12개 안팎입니다. 입고 가능 시점을 알려주세요.</span></li>
+    <li><span><b>Vine</b> 6번 진행안대로 힙시트 10개·더블케어 5개 무상 제공과 등록비 ¥20,000 진행에 동의하시는지 알려주세요.</span></li>
+    <li><span><b>예산 재배분</b> 4·5번의 재배분 방향에 동의하시는지 알려주세요.</span></li>
+  </ul>
+</section>
+</div>
+
+<script>
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function hbars(id, rows, opt){
+  const el = document.getElementById(id); const max = opt.max;
+  let html = opt.legend ? '<div class="legend">' + opt.legend.map(l=>`<span><i style="background:${l[1]}"></i>${l[0]}</span>`).join('') + '</div>' : '';
+  rows.forEach(r=>{
+    const series = r.v.map((v,i)=>{
+      const w = Math.max(v/max*100, v>0?0.8:0);
+      const col = opt.colors[i];
+      return `<div class="bar" title="${r.l}: ${opt.fmt(v,i)}"><span class="f" style="width:calc(${w}% * .78);background:${col}"></span><em>${opt.fmt(v,i)}</em></div>`;
+    }).join('');
+    html += `<div class="row"><div class="lab">${r.l}${r.s?`<small>${r.s}</small>`:''}</div><div class="track">${series}</div></div>`;
+  });
+  el.innerHTML = html;
+}
+// 2. ad results (JPY; Ads API campaign daily reports SP/SB/SD 10/26-11/22, pulled 2026-11-23 11:44 KST)
+const yen = v => '¥'+Math.round(v).toLocaleString('en-US');
+hbars('c-period', [
+  {l:'10/28~11/3', s:'2건 · 0.86배', v:[12574,10873]},
+  {l:'11/4~11/12', s:'8건 · 1.57배', v:[36363,56964]},
+  {l:'11/13~11/22', s:'6건 · 0.35배', v:[46140,16254]}
+], {max:56964, colors:[css('--accent-soft'), css('--accent')],
+    legend:[['광고비',css('--accent-soft')],['광고 매출',css('--accent')]], fmt:v=>yen(v)});
+hbars('c-alloc', [
+  {l:'속싸개 검색', s:'전환 · 12건', v:[12909,32508]},
+  {l:'힙시트 검색', s:'고려·전환 · 3건', v:[28714,24492]},
+  {l:'아기띠 검색', s:'고려·전환 · 1건', v:[27427,27091]},
+  {l:'브랜드 방어', s:'전환', v:[260,0]},
+  {l:'브랜드 광고', s:'인지', v:[20625,0]},
+  {l:'디스플레이 광고', s:'인지', v:[5143,0]}
+], {max:32508, colors:[css('--accent-soft'), css('--accent')],
+    legend:[['광고비',css('--accent-soft')],['광고 매출',css('--accent')]], fmt:v=>yen(v)});
+// 4. plan vs actual (KRW, actual = JPY x 9.3)
+hbars('c-plan', [
+  {l:'10/28~11/3', v:[350000,116938]},
+  {l:'11/4~11/12', v:[1080000,338176]},
+  {l:'11/13~11/22', v:[500000,429102]}
+], {max:1080000, colors:[css('--plan'), css('--accent')],
+    legend:[['10/23 계획',css('--plan')],['실제 집행',css('--accent')]],
+    fmt:(v,i)=> (v/10000).toFixed(i?1:0)+'만\u00a0원'});
+// contract stack (thousand KRW, of 5,000)
+(function(){
+  const segs=[['집행 10/28~11/22',884,css('--accent')],['블프 예상 집행',1136,css('--accent-soft')],['남을 예상 금액',2980,css('--plan')]];
+  document.getElementById('c-contract').innerHTML = segs.map(s=>`<div title="${s[0]}: 약\u00a0${Math.round(s[1]/10)}만\u00a0원" style="width:${s[1]/50}%;background:${s[2]}"></div>`).join('');
+  document.getElementById('c-contract-lab').innerHTML = segs.map(s=>`<span><i style="display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:${s[2]}"></i>${s[0]} 약\u00a0${Math.round(s[1]/10)}만\u00a0원</span>`).join('');
+})();
+
+// META charts (KRW)
+const won = v => '₩'+Math.round(v).toLocaleString('en-US');
+hbars('m-period', [
+  {l:'온드 10/9~11/3', v:[0,439578]},
+  {l:'스마일세일 11/4~11/12', v:[372361,184355]},
+  {l:'상시 11/13~11/22', v:[298129,179432]}
+], {max:439578, colors:[css('--accent'), css('--accent-soft')],
+    legend:[['트래픽',css('--accent')],['참여형',css('--accent-soft')]], fmt:v=>won(v)});
+hbars('m-plan', [
+  {l:'상시 11/23~11/26', s:'4일', v:[50000]},
+  {l:'블프 시작 11/27', s:'1일', v:[280000]},
+  {l:'블프 주말 11/28~29', s:'2일', v:[210000]},
+  {l:'블프 평일 11/30~12/4', s:'5일', v:[150000]},
+  {l:'블프 주말 12/5~6', s:'2일', v:[210000]},
+  {l:'블프 마감 12/7', s:'1일', v:[280000]},
+  {l:'마무리 12/8~12/10', s:'3일', v:[20000]}
+], {max:280000, colors:[css('--accent')], fmt:v=>won(v)});
+</script>
+
+</body></html>
